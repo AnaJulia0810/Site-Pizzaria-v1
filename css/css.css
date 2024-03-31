@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');/* tirulo do site fonte(font-family: 'Cinzel Decorative', serif;)*/
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');/* corpo do site fonte(font-family: 'Baskervville', serif;)*/
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');/* Letra cursiva (font-family: 'Satisfy', cursive;)  */
+/* Normalização */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Normalização HTML */
+html{
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    color: rgb(255, 255, 255);
+    font-family: 'Baskervville', serif;
+    scroll-behavior: smooth;/* Efeito de transição das seções */
+}
+
+/* Configurações fundo de tela */
+body{
+    background: linear-gradient(rgba(17, 17, 17, 0.903), rgba(20, 20, 20,  0.403)), url(/img/fundo\ header.png);
+    background-position: center center;
+    background-size: cover;
+    overflow-x: hidden;/* Tira a barra e rolagem inferior */
+    background-repeat: no-repeat;
+}
+
+/* Configurações do menu */
+header{
+    width: 100%;/* Largura de 100% da tela(viewport) */
+    height: 7vh;/* Ocupar 7% da altura do body */
+}
+
+.container-menu{
+    text-transform: uppercase;/* Letras em maíusculo */
+    height: 100%;/* 100% do tamanho disponível para o header */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem;/* Tamanho da fonte 18px */
+}
+
+.logo{
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3.9rem;
+    letter-spacing: 0.4rem;/* Espaçamento entre as letras */
+    cursor: pointer;/* Trocar o cursor do mouse */
+    color:  #CE2B37;
+}
+
+.container-menu .menu-itens{
+    display: flex;
+    list-style: none;/* Remover estilos de lista */
+    gap: 10px;/* Espaço entre os elementos */
+}
+
+.container-menu .menu-itens a{
+    text-decoration: none;/* Remover sublinhado do link */
+    color: white;
+    padding: 1.5rem;
+    font-size: 3rem;
+    transform: 2ms ease-in;/* Duração da transformação e tipo de efeito */
+    position: relative;/* Permitir que o elemento receba formação TRBL */
+}
+
+/* Configurações dos efeitos, utilizando a pseudo classe :before */
+.container-menu .menu-itens a::before{
+    content: ' ';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1px;
+    background-color: gold;
+    transition: all 1.5s ease;/* Duração do tempo de todas as transições */
+}
+
+.container-menu .menu-itens a:hover::before{
+    width: 100%;
+}

@@ -1,0 +1,197 @@
+/* --------------------Section-06------------- */
+.containersec06 {
+    width: 100%;
+    height: 110rem;
+    background-color: rgba(0, 0, 0, 0.900); /* Cor preta com 90% de opacidade */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.fundo-imagem {
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/Fundo-cardapio.png");
+    background-position: center;
+    background-repeat: repeat;
+    position: absolute;
+    filter: brightness(0.1); /* Ajuste o valor conforme necessário */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.sec06-topo {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.sec06-baixo {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.sec06-card {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.3s ease; 
+}
+
+.sec06card-img {
+    width: 50%;
+    height: 100%;
+}
+
+.sec06card-img img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%); /* Tira um pouquinho o brilho */
+    object-fit: cover;
+}
+
+.sec06card-conteudo {
+    width: 50%;
+    height: 100%;
+}
+
+.sec06card-conteudo h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 5.3rem;
+    color: #CE2B37;
+}
+
+.sec06card-conteudo hr {
+    margin: 2rem;
+}
+
+.sec06card-conteudo p {
+    font-size: 2.7rem;
+    padding: 2.2rem;
+}
+
+.sec06card-conteudo h5 {
+    font-size: 3rem;
+    color: #0B974E;
+    text-align: center;
+}
+/* --------------------Section-07------------- */
+.containersec07 {
+    height: 110rem;
+    width: 100%;
+    display: flex;
+    background-color: #0B974E;
+}
+
+.sec07-img {
+    width: 50%;
+    height: 100%;
+}
+
+.sec07-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sec07-conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colorh1 {
+    color: #CE2B37;
+}
+
+.sec07-conteudo h1 {
+    color: #fff;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 7rem;
+}
+
+.sec07-conteudo p {
+    font-size: 4rem;
+    text-align: justify;
+    padding: 1rem 20rem 1rem 20rem;
+}
+
+.btn {
+    /* botao tik tok*/
+    pointer-events: auto;/* Pode clicar e interagir com botão */
+    cursor: pointer;/* Elemento clicavel */
+    border: none;
+    padding: 4rem 8rem;
+    margin: 0;
+    position: relative; /* o que será relevante para os elementos filhos com posição absoluta.*/
+    display: inline-block;/* bloco em linha */
+}
+
+.sec07-bbotao {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.3rem;
+    color: #fff;
+    background-color: none; /* Sem cor de fundo */
+    padding: 0;
+}
+
+.sec07-bbotao span {
+    display: block;
+    position: relative;/* ele tem posiçãorelativa para elementos filhos absolut */
+    padding: 2.5rem 4rem;
+    mix-blend-mode: difference;/* Coloca uma mistura, aonde a cor da camada é diferente entre as cores */
+}
+
+.sec07-bbotao .sec07-btn {/*efeito*/
+    top: 0;
+    left: 0;
+    position: absolute;/* absoluto em pai*/
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 0.85rem;
+    overflow: hidden;/* não saia do seu limite*/
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);/* Aplica uma transição suave ao botão quando a propriedade transform muda.*/
+}
+
+.sec07-bbotao:hover .sec07-btn {/*Efeito hover*/
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+.sec07-bbotao .sec07-btn::before {/*Efeito hover*/
+    content: '';/* Adiciona um conteúdo vazio ao pseudo-elemento ::before(é utilizado para criar um círculo que se expande quando o botão é hover.)*/
+    position: absolute;/* Absolut do pai */
+    width: 110%;
+    height: 110%;
+    padding-bottom: 110%; /* Preenchimento inferior a 110% para largura do container */
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: #CE2B37;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 1);/* Define a transformação inicial do círculo, tornando-o invisível (escala zero).*/
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);/*: Adiciona uma transição suave à transformação do círculo quando ocorre a mudança de estado.*/
+}
+
+.sec07-bbotao:hover .sec07-btn::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);/* Torna visivel */
+}
+
+.sec07-bbotao .sec07-btn::after {/* ::after no botão que cobre completamente o seu conteúdo. */
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sec07-bbotao:hover .sec07-btn::after {
+    opacity: 1;
+    transition-duration: 0.1s;
+    transition-delay: 0.9s;
+}
